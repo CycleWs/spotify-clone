@@ -1,0 +1,39 @@
+.footer__content{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(100deg, rgb(250, 90, 117), rgb(43, 43, 240) 100%);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.footer__content .footer__content__text{
+    display: flex;
+    color: #fff;
+    margin-left: 2rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.footer__content .footer__content__button{
+    margin-right: 3rem;
+}
+
+.footer__content .footer__content__button button{
+    display: flex;
+    align-items: center;
+    padding: 12px 28px;
+    background-color: white;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.footer__content .footer__content__button .button__text{
+    color: #000;
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
