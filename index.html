@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Clone</title>
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/vars.css">
+    <link rel="stylesheet" href="./src/styles/sidebar.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="stylesheet" href="./src/styles/footer.css">
 </head>
 <body>
     <div class="sidebar">
         <nav class="sidebar__nav">
                 <div class="logo">
                     <a href="">
-                        <img src="./assets/icons/logo-spotify.png" alt="Spotify Logo" srcset="">
+                        <img src="./src/assets/icons/logo-spotify.png" alt="Spotify Logo" srcset="">
                     </a>
                 </div>
                     <ul>
@@ -62,6 +64,32 @@
             </div>
         </div>
     </div>
+
+    <main>
+        <div class="main-container">
+            <nav class="header__navigation">
+
+                <div class="navigation">
+                    <button class="arrow-left">
+                        <img src="./src/assets/icons/small-left.png" alt="left arrow" srcset="">g
+                    </button>
+                    <button class="arrow-right">
+                        <img src="./src/assets/icons/small-right.png" alt="right arrow" srcset="">g
+                    </button>
+
+                    <div class="header__search">
+                        <img src="./src/assets/icons/search.png" alt="" srcset="">
+                        <input id="search-input" type="text" maxlength="800" placeholder="o que você quer ouvir?"/>
+                    </div>
+                </div>
+
+                <div class="header__login">
+                    <button class="subscribe">Inscreva-se</button>
+                    <button class="login">Entrar</button>
+                </div>
+            </nav>
+        </div>
+    </main>
 
     <footer class="footer__content">
                 <div class="footer__content__text">
