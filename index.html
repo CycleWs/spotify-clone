@@ -12,6 +12,7 @@
         }
 
         input,
+        select,
         button {
             padding: 10px;
             margin: 10px;
@@ -29,17 +30,51 @@
 
     <h1>Fator de Correção</h1>
 
-    <input type="number" id="numero1" placeholder="Peso Bruto">
-    <input type="number" id="numero2" placeholder="Peso Liquido">
-    <br>
-    <button onclick="calcularDivisao()">Dividir</button>
+    <div>
+        <input type="number" id="numero1" placeholder="Peso Bruto">
+        <select id="unidade1">
+            <option value="kg">KG</option>
+            <option value="g">Gramas</option>
+            <option value="l">Litros</option>
+            <option value="ml">ML</option>
+        </select>
+    </div>
+
+    <div>
+        <input type="number" id="numero2" placeholder="Peso Líquido">
+        <select id="unidade2">
+            <option value="kg">KG</option>
+            <option value="g">Gramas</option>
+            <option value="l">Litros</option>
+            <option value="ml">ML</option>
+        </select>
+    </div>
+
+    <button onclick="calcularDivisao()">Calcular</button>
 
     <div id="resultado"></div>
 
     <script>
+        function converterParaGramasOuML(valor, unidade) {
+            switch (unidade) {
+                case "kg":
+                    return valor * 1000;
+                case "g":
+                    return valor;
+                case "l":
+                    return valor * 1000;
+                case "ml":
+                    return valor;
+                default:
+                    return valor;
+            }
+        }
+
         function calcularDivisao() {
             const num1 = parseFloat(document.getElementById("numero1").value);
             const num2 = parseFloat(document.getElementById("numero2").value);
+            const unidade1 = document.getElementById("unidade1").value;
+            const unidade2 = document.getElementById("unidade2").value;
             const resultadoDiv = document.getElementById("resultado");
 
             if (isNaN(num1) || isNaN(num2)) {
@@ -52,8 +87,12 @@
                 return;
             }
 
-            const resultado = num1 / num2;
-            resultadoDiv.innerText = `Fator de Correção: ${resultado}`;
+            // Converte ambos os valores para gramas ou mililitros
+            const valor1Convertido = converterParaGramasOuML(num1, unidade1);
+            const valor2Convertido = converterParaGramasOuML(num2, unidade2);
+
+            const resultado = valor1Convertido / valor2Convertido;
+            resultadoDiv.innerText = `Fator de Correção: ${resultado.toFixed(2)}`;
         }
     </script>
 
